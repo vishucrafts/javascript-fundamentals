@@ -17,3 +17,12 @@ git checkout your-branch-name
 ```sh
 node src/index.js
 ```
+
+How to initialize a npm project
+
+```sh
+pnpm init
+pnpm add -D vitest
+pnpm test # or pnpm run test
+pnpm add -D typescript @types/node
+```
