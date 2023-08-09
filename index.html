@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<button id="timer-btn">Start timer!</button>
+		<p>Timer: <span id="timer-value">0</span></p>
+		<script>
+			const timerBtn = document.getElementById("timer-btn");
+			const timerValue = document.getElementById("timer-value");
+
+			let timer = 0;
+
+			let intervalId = null;
+			timerBtn.addEventListener("click", () => {
+				timer = 0;
+				timerValue.textContent = timer;
+
+				if (intervalId) {
+					clearInterval(intervalId);
+				}
+
+				intervalId = setInterval(() => {
+					timer++;
+					timerValue.textContent = timer;
+				}, 1000);
+			});
+		</script>
+	</body>
+</html>
